@@ -277,14 +277,16 @@
     .hero-desc { margin: 0 0 40px; }
     .hero-ctas { justify-content: flex-start; }
     @media (max-width: 900px) {
-        /* su mobile: viso in alto, testo in basso */
-        .hero { align-items: flex-end; justify-content: center; }
-        .hero-bg img { object-position: 32% top; }
-        .hero-overlay {
-            background: linear-gradient(to top,
-                rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.05) 75%);
-        }
-        .hero-content { text-align: center; max-width: 100%; padding: 0 28px 96px; }
+        /* su mobile foto e testo sono SEPARATI: la foto sta sopra, intera e
+           senza scritte né oscuramenti; il testo segue su fondo pieno */
+        .hero { display: block; min-height: auto; }
+        .hero-bg { position: relative; inset: 0; height: 56vh;
+                   transform: none !important; /* disattiva il parallax JS */ }
+        .hero-bg img { object-position: 28% center; }
+        .hero-overlay { display: none; }
+        .hero-scroll { display: none; }
+        .hero-content { text-align: center; max-width: 100%;
+                        padding: 40px 28px 56px; }
         .hero-desc { margin: 0 auto 36px; }
         .hero-ctas { justify-content: center; }
     }
