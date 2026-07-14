@@ -263,6 +263,32 @@
         .wa-fab                      { bottom: 16px; right: 16px; width: 52px; height: 52px; font-size: 1.4rem; }
     }
     </style>
+    <style>
+    /* --- Personalizzazione Vale Lux: il viso della titolare (a sinistra nella
+       foto) resta visibile; il testo si sposta a destra con overlay leggero --- */
+    .hero { justify-content: flex-end; }
+    .hero-bg img { object-position: 30% center; }
+    .hero-overlay {
+        background: linear-gradient(100deg,
+            rgba(0,0,0,.04) 0%, rgba(0,0,0,.12) 42%,
+            rgba(0,0,0,.55) 68%, rgba(0,0,0,.78) 100%);
+    }
+    .hero-content { text-align: left; max-width: 540px; padding-right: 6vw; }
+    .hero-desc { margin: 0 0 40px; }
+    .hero-ctas { justify-content: flex-start; }
+    @media (max-width: 900px) {
+        /* su mobile: viso in alto, testo in basso */
+        .hero { align-items: flex-end; justify-content: center; }
+        .hero-bg img { object-position: 32% top; }
+        .hero-overlay {
+            background: linear-gradient(to top,
+                rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.05) 75%);
+        }
+        .hero-content { text-align: center; max-width: 100%; padding: 0 28px 96px; }
+        .hero-desc { margin: 0 auto 36px; }
+        .hero-ctas { justify-content: center; }
+    }
+    </style>
 </head>
 <body>
 
